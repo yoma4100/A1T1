@@ -25,7 +25,7 @@ public class CashbackHackServiceTest {
     }
 
     @Test
-    public void ServiceReturns1000HighBound() {
+    public void ServiceReturns0() {
         int actual = service.remain(1000);
         Assert.assertEquals(actual, 0);
     }
