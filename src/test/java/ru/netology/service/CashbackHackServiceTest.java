@@ -7,34 +7,34 @@ import org.testng.Assert;
 public class CashbackHackServiceTest {
     CashbackHackService service = new CashbackHackService();
 
-    @Test (description = "zero check")
+    @Test(description = "zero check")
     public void ServiceReturns1000Zero() {
         int actual = service.remain(0);
         Assert.assertEquals(actual, 1000);
     }
 
-    @Test (description = "low bound check")
+    @Test(description = "low bound check")
     public void ServiceReturns999() {
         int actual = service.remain(1);
         Assert.assertEquals(actual, 999);
     }
 
-    @Test (description = "middle value check")
+    @Test(description = "middle value check")
     public void ServiceReturns500() {
         int actual = service.remain(500);
         Assert.assertEquals(actual, 500);
     }
 
-    @Test (description = "Error check")
-    public void ServiceReturns1000HighBound() {
+    @Test(description = "Error check")
+    public void ServiceReturns0() {
         int actual = service.remain(1000);
         Assert.assertEquals(actual, 0);
     }
 
-    @Test (description = "hugh value check")
+    @Test(description = "hugh value check")
     public void ServiceReturns1000HughValue() {
         int actual = service.remain(100000000);
         Assert.assertEquals(actual, 1000);
     }
 
-    }
+}
